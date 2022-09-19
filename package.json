@@ -1,0 +1,34 @@
+{
+    "name": "owinteractive-api",
+    "version": "1.0.0",
+    "description": "desafio técnico da OW Interactive",
+    "main": "./src/index.js",
+    "scripts": {
+        "test": "jest --runInBand --detectOpenHandles --forceExit",
+        "start": "node .",
+        "dev": "nodemon .",
+        "lint": "eslint --ext .js -c .eslintrc.json ."
+    },
+    "keywords": [
+        "desafio",
+        "api",
+        "OW interactive"
+    ],
+    "author": "Adriel Modollo",
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "express-rescue": "^1.1.31",
+        "frisby": "^2.1.3",
+        "jest": "^27.3.1",
+        "joi": "^17.4.2",
+        "mysql": "^2.18.1",
+        "nodemon": "^2.0.15"
+    },
+    "devDependencies": {
+        "eslint": "^8.3.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.25.3"
+    }
+}
