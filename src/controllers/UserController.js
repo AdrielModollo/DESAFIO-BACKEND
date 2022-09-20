@@ -11,7 +11,7 @@ module.exports = {
         const { user_id } = req.params;
 
         const user = await User.findByPk(user_id)
-    
+
         return res.json(user);
     },
 
@@ -21,5 +21,23 @@ module.exports = {
         const user = await User.create({ name, email, birthday });
 
         return res.json(user)
+    },
+
+    async deleteOne(req, res) {
+        const { user_id } = req.params;
+
+        const userFound = await User.findByPk(user_id);
+
+        if (!userFound) {
+            return res.status(400).json({ error: 'User not found' });
+        }
+
+        User.destroy({
+            where: {
+                id: user_id
+            }
+        });
+
+        return res.json();
     }
 }
