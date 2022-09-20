@@ -5,8 +5,7 @@
     "main": "./src/index.js",
     "scripts": {
         "test": "jest --runInBand --detectOpenHandles --forceExit",
-        "start": "node .",
-        "dev": "nodemon .",
+        "dev": "nodemon src/server.js",
         "lint": "eslint --ext .js -c .eslintrc.json ."
     },
     "keywords": [
