@@ -1,10 +1,16 @@
 const User = require('../models/User');
 
 module.exports = {
-    async list(req, res) {
+    async find(req, res) {
         const users = await User.findAll();
 
         return res.json(users)
+    },
+
+    async findOne(req, res) {
+        const  user  = await User.findOne(req.params);
+        
+        return res.status(200).send({ data: user });
     },
 
     async store(req, res) {
