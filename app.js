@@ -2,6 +2,8 @@ const express = require('express');
 
 const app = express ();
 
+const User = require('./src/models/User')
+
 app.get('/', async (req, res) => {
     res.send('Home');
 });

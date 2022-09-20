@@ -19,9 +19,9 @@ const User = db.define('users', {
     birthday: {
         type: Sequelize.DATE,
         allowNull: false,
-    }
+    },
 });
 
-User.sync({alter: true});
+User.sync();
 
 module.exports = User;
