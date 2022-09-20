@@ -1,27 +1,15 @@
-const Sequelize = require('sequelize');
-const db = require('./db');
+const { Model, DataTypes } = require('sequelize');
 
-const User = db.define('users', {
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true,
-    },
-    name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    email: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    birthday: {
-        type: Sequelize.DATE,
-        allowNull: false,
-    },
-});
-
-User.sync();
+class User extends Model {
+    static init(sequelize){
+        super.init({
+            name: DataTypes.STRING,
+            email: DataTypes.STRING,
+            birthday: DataTypes.DATE,        
+        }, {
+            sequelize
+        })
+    }
+}
 
 module.exports = User;
