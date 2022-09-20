@@ -8,9 +8,11 @@ module.exports = {
     },
 
     async findOne(req, res) {
-        const  user  = await User.findOne(req.params);
-        
-        return res.status(200).send({ data: user });
+        const { user_id } = req.params;
+
+        const user = await User.findByPk(user_id)
+    
+        return res.json(user);
     },
 
     async store(req, res) {
