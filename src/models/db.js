@@ -7,7 +7,7 @@ const connection = new Sequelize('owinteractive', 'root', '1234', {
 
 connection.authenticate()
 .then(function(){
-    console.log("Conection successful")
+    console.log("Connection successful")
 }).catch(function(){
     console.log('Error: Connection not successful')
 })
