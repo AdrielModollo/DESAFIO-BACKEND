@@ -2,7 +2,11 @@ const User = require('../models/User');
 
 module.exports = {
     async find(req, res) {
-        const users = await User.findAll();
+        const users = await User.findAll({
+            order: [
+                ['created_at', 'DESC'],
+            ],
+        });
 
         return res.json(users)
     },
