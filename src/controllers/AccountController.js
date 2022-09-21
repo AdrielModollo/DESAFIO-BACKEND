@@ -12,7 +12,7 @@ module.exports = {
             return res.status(400).json({ error: "User not found "})
         }
 
-        const account = await Account.create({ balance, debit, credit, estorn, total, user_id})
+        const account = await Account.create({ debit, credit, estorn, total, user_id})
 
         return res.json(account)
     },
