@@ -16,4 +16,22 @@ module.exports = {
 
         return res.json(account)
     },
+
+    async deleteOne(req, res) {
+        const { account_id } = req.params;
+
+        const accountFound = await User.findByPk(account_id);
+
+        if (!accountFound) {
+            return res.status(400).json({ error: 'Account not found' });
+        }
+
+        Account.destroy({
+            where: {
+                id: account_id
+            }
+        });
+
+        return res.json();
+    }
 }

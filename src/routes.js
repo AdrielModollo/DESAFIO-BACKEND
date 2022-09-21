@@ -12,5 +12,7 @@ routes.delete('/users/:user_id', UserController.deleteOne)
 routes.get("/exportcsv", CsvController.csv)
 
 routes.post('/users/:user_id/accounts', AccountController.create)
+routes.delete('/account/:account_id', AccountController.deleteOne)
+
 
 module.exports = routes;
