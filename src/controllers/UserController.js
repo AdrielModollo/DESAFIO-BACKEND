@@ -20,9 +20,9 @@ module.exports = {
     },
 
     async create(req, res) {
-        const { name, email, birthday } = req.body;
+        const { name, email, birthday, balance } = req.body;
 
-        const user = await User.create({ name, email, birthday });
+        const user = await User.create({ name, email, birthday, balance });
 
         return res.json(user)
     },

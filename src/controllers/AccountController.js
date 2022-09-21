@@ -4,7 +4,7 @@ const User = require('../models/User');
 module.exports = {
     async create(req, res) {
         const { user_id } = req.params;
-        const { balance, debit, credit, estorn, total } = req.body;
+        const { debit, credit, estorn, total } = req.body;
 
         const user = await User.findByPk(user_id);
 
