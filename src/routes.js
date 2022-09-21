@@ -9,6 +9,9 @@ routes.post('/users', UserController.create)
 routes.get('/users', UserController.find)
 routes.get('/users/:user_id', UserController.findOne)
 routes.delete('/users/:user_id', UserController.deleteOne)
+routes.patch('/users', UserController.update)
+
+
 routes.get("/exportcsv", CsvController.csv)
 
 routes.post('/users/:user_id/accounts', AccountController.create)

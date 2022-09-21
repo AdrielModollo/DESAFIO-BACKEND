@@ -6,6 +6,9 @@ module.exports = {
             order: [
                 ['created_at', 'DESC'],
             ],
+            include: [
+                { association: 'accounts'}
+            ]
         });
 
         return res.json(users)
@@ -25,6 +28,14 @@ module.exports = {
         const user = await User.create({ name, email, birthday, balance });
 
         return res.json(user)
+    },
+
+    async update(req, res){
+        const { id, balance } = req.params;
+
+        const newBalance = await User.update({ id, balance });
+
+        return res.json(newBalance);
     },
 
     async deleteOne(req, res) {
