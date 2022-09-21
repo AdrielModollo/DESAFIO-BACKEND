@@ -16,19 +16,19 @@ module.exports = {
       onUpdate: 'CASCADE',
       onDelete: 'CASCADE',
     },
-    saldo: {
+    balance: {
       type: Sequelize.DOUBLE,
       allowNull: false,
     },
-    debito: {
+    debit: {
       type: Sequelize.DOUBLE,
       allowNull: false,
     },
-    credito: {
+    credit: {
       type: Sequelize.DOUBLE,
       allowNull: false,
     },
-    estorno: {
+    estorn: {
       type: Sequelize.DOUBLE,
       allowNull: false,
     },
