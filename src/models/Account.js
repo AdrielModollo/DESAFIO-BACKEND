@@ -7,7 +7,6 @@ class Account extends Model {
             debit: DataTypes.DOUBLE,
             credit: DataTypes.DOUBLE,  
             estorn: DataTypes.DOUBLE,
-            total: DataTypes.DOUBLE,
         }, {
             sequelize
         })
