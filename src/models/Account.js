@@ -7,10 +7,14 @@ class Account extends Model {
             debit: DataTypes.DOUBLE,
             credit: DataTypes.DOUBLE,  
             estorn: DataTypes.DOUBLE,
-            total: DataTypes.DOUBLE,          
+            total: DataTypes.DOUBLE,
         }, {
             sequelize
         })
+    }
+
+    static associate(models) {
+        this.belongsTo(mode.User, { foreignKey: 'user_id', as: 'account_user' })
     }
 }
 
