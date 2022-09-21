@@ -2,7 +2,7 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) { 
-    return await queryInterface.createTable('account', { 
+    return await queryInterface.createTable('accounts', { 
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
@@ -18,23 +18,19 @@ module.exports = {
     },
     balance: {
       type: Sequelize.DOUBLE,
-      allowNull: false,
+      allowNull: true,
     },
     debit: {
       type: Sequelize.DOUBLE,
-      allowNull: false,
+      allowNull: true,
     },
     credit: {
       type: Sequelize.DOUBLE,
-      allowNull: false,
+      allowNull: true,
     },
     estorn: {
       type: Sequelize.DOUBLE,
-      allowNull: false,
-    },
-    total: {
-      type: Sequelize.DOUBLE,
-      allowNull: false,
+      allowNull: true,
     },
     created_at: {
       type: Sequelize.DATE,
@@ -48,6 +44,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    return await queryInterface.dropTable('account');
+    return await queryInterface.dropTable('accounts');
   }
 };
