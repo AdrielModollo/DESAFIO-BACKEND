@@ -21,6 +21,10 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
+      balance: {
+        type: Sequelize.DOUBLE,
+        allowNull: true,
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,

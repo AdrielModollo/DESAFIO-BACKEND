@@ -16,10 +16,6 @@ module.exports = {
       onUpdate: 'CASCADE',
       onDelete: 'CASCADE',
     },
-    balance: {
-      type: Sequelize.DOUBLE,
-      allowNull: true,
-    },
     debit: {
       type: Sequelize.DOUBLE,
       allowNull: true,
@@ -29,6 +25,10 @@ module.exports = {
       allowNull: true,
     },
     estorn: {
+      type: Sequelize.DOUBLE,
+      allowNull: true,
+    },
+    total: {
       type: Sequelize.DOUBLE,
       allowNull: true,
     },
