@@ -16,6 +16,7 @@
     "author": "Adriel Modollo",
     "license": "MIT",
     "dependencies": {
+        "date-fns": "^2.29.3",
         "dotenv": "^10.0.0",
         "express": "^4.18.1",
         "fast-csv": "^4.3.6",
