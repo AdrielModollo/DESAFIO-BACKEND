@@ -3,7 +3,8 @@ const UserController = require('./controllers/UserController')
 const CsvController = require('./controllers/CsvController')
 const AccountController = require('./controllers/AccountController')
 const createUser = require('./presentation/controllers/schemas/create-schema')
-const { validate } = require('./presentation/controllers/validators/create-validator')
+const userUpdate = require('./presentation/controllers/schemas/update-schema')
+const { validate } = require('./presentation/controllers/validators/validator')
 
 const routes = express.Router();
 
@@ -11,7 +12,7 @@ routes.post('/users', validate(createUser), UserController.create)
 routes.get('/users', UserController.find)
 routes.get('/users/:user_id', UserController.findOne)
 routes.delete('/users/:user_id', UserController.deleteOne)
-routes.patch('/users/:user_id', UserController.update)
+routes.patch('/users/:user_id', validate(userUpdate), UserController.update)
 
 
 routes.get("/exportcsv", CsvController.csv)
