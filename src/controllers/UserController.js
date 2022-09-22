@@ -7,7 +7,7 @@ module.exports = {
                 ['created_at', 'DESC'],
             ],
             include: [
-                { association: 'accounts'}
+                { association: 'accounts' }
             ]
         });
 
@@ -17,7 +17,11 @@ module.exports = {
     async findOne(req, res) {
         const { user_id } = req.params;
 
-        const user = await User.findByPk(user_id)
+        const user = await User.findByPk(user_id, {
+            include: [
+                { association: 'accounts' }
+            ]
+        })
 
         return res.json(user);
     },
@@ -30,7 +34,7 @@ module.exports = {
         return res.json(user)
     },
 
-    async update(req, res){
+    async update(req, res) {
         const { id, balance } = req.params;
 
         const newBalance = await User.update({ id, balance });
