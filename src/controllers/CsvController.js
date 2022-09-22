@@ -14,7 +14,7 @@ module.exports = {
         const jsonData = JSON.parse(JSON.stringify(users));
 
         fastcsv
-            .write(jsonData, { headers: true })
+            .write(jsonData, { headers: true, delimiter: '|', quote: "," })
             .on("finish", function () {
                 console.log("Write to owinteractive.csv successfully!");
             })
