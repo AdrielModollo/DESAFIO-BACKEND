@@ -35,11 +35,16 @@ module.exports = {
     },
 
     async update(req, res) {
-        const { id, balance } = req.params;
+        const { user_id } = req.params;
 
-        const newBalance = await User.update({ id, balance });
+        const user = await User.findByPk(user_id)
 
-        return res.json(newBalance);
+        const result = await user.update(req.body, {
+            where: { id: user_id },
+            returning: true
+        });
+
+        res.status(200).json({ success: true, result });
     },
 
     async deleteOne(req, res) {
