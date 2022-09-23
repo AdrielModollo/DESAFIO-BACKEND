@@ -31,11 +31,11 @@ yarn dev  <- Em desenvolvimento
 
 # Como testar?
 
-POST = localhost:3333/users
-GET = localhost:3333/users/
-DELETE = localhost:3333/users/:id
-GET = localhost:3333/users/:id
-PATCH localhost:3333/users/:id
-GET = localhost:3333/exportcsv 
-POST = localhost:3333/users/:user_id/accounts
-POST = localhost:3333/account/id
+- `POST = localhost:3333/users`
+- `GET = localhost:3333/users/`
+- `DELETE = localhost:3333/users/:id`
+- `GET = localhost:3333/users/:id`
+- `PATCH localhost:3333/users/:id`
+- `GET = localhost:3333/exportcsv`
+- `POST = localhost:3333/users/:user_id/accounts`
+- `POST = localhost:3333/account/id`
