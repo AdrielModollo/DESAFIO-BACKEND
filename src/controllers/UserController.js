@@ -1,5 +1,7 @@
 const User = require('../models/User');
 const Account = require('../models/Account');
+const { verifyNewValue } = require('./services/verifyNewValue')
+
 
 module.exports = {
     async find(req, res) {
@@ -44,6 +46,15 @@ module.exports = {
             where: { id: user_id },
             returning: true
         });
+
+        const accountFound = await Account.findOne({ where: { user_id: user_id } })
+
+        const total = verifyNewValue(accountFound.debit, accountFound.credit, accountFound.estorn, user.balance)
+
+        await Account.update({ total }, {
+            where: { user_id: user_id },
+            returning: true
+        })
 
         res.status(200).json({ success: true, result });
     },
