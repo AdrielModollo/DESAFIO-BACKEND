@@ -6,7 +6,9 @@
     "scripts": {
         "test": "jest --runInBand --detectOpenHandles --forceExit",
         "dev": "nodemon src/server.js",
-        "lint": "eslint --ext .js -c .eslintrc.json ."
+        "lint": "eslint --ext .js -c .eslintrc.json .",
+        "mysql": "npx sequelize db:migrate",
+        "seed": "npx sequelize db:seed:all"
     },
     "keywords": [
         "desafio",
