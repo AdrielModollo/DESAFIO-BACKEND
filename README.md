@@ -23,7 +23,7 @@
 Executar comando: yarn
 (Desta forma será instalada todas depedências já declarada em nosso package.json).
 
-# Executar projeto sem docker
+# Executar projeto
 
 Comando para iniciar: 
 
