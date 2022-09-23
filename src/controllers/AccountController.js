@@ -9,6 +9,14 @@ module.exports = {
 
         const user = await User.findByPk(user_id);
 
+        console.log(user_id)
+
+        const accountFound = await Account.findOne({ where: { user_id: user_id } });
+
+        if (accountFound) {
+            return res.status(400).json({ error: "User already has an account " })
+        }
+
         if (!user) {
             return res.status(400).json({ error: "User not found " })
         }
