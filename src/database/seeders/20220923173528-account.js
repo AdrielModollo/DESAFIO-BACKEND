@@ -7,6 +7,7 @@ module.exports = {
       debit: 350,
       credit: 1000,
       estorn: 500,
+      total: 7850,
       created_at: new Date(),
       updated_at: new Date()
     }], {});
