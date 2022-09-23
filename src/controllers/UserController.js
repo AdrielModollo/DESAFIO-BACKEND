@@ -52,7 +52,7 @@ module.exports = {
         const { user_id } = req.params;
 
         const userFound = await User.findByPk(user_id);
-        const accountFound = await Account.findOne({ user_id: user_id })
+        const accountFound = await Account.findOne({ where: { user_id: user_id } })
 
         if (accountFound.user_id == user_id || userFound.balance > 0) {
             return res.status(400).json({ error: 'User has movements, so it cannot be deleted' });
