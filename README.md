@@ -29,6 +29,10 @@ Comando para iniciar:
 
 yarn dev  <- Em desenvolvimento
 
+yarn mysql <- Iniciar e banco de dados
+
+yarn seed <- Popular banco de dados
+
 # Como testar?
 
 - `POST = localhost:3333/users`
