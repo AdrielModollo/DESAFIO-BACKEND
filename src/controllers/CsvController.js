@@ -1,25 +1,32 @@
 const User = require('../models/User');
-const fastcsv = require("fast-csv");
-const fs = require("fs");
-const ws = fs.createWriteStream("owinteractive.csv");
+const { csvService } = require('./services/csv-service')
+const { Op } = require("sequelize");
 
 module.exports = {
-    async csv(req, res) {
+    async csvAll(req, res) {
         const users = await User.findAll({
             order: [
                 ['created_at', 'DESC'],
             ],
         });
 
-        const jsonData = JSON.parse(JSON.stringify(users));
+        res.json(csvService(users));
+    },
 
-        fastcsv
-            .write(jsonData, { headers: true, delimiter: '|', quote: "," })
-            .on("finish", function () {
-                console.log("Write to owinteractive.csv successfully!");
-            })
-            .pipe(ws);
+    async csvFilter(req, res) {
+        const { createdAt } = req.query
 
-        return res.json(users)
-    }
+        const users = await User.findAll({
+            order: [
+                ['created_at', 'DESC'],
+            ],
+            where: {
+                created_at: {
+                    [Op.startsWith]: createdAt
+                },
+            }
+        });
+
+        res.json(csvService(users));
+    },
 }
