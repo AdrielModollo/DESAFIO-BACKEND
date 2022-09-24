@@ -16,7 +16,8 @@ routes.delete('/users/:user_id', UserController.deleteOne)
 routes.patch('/users/:user_id', validate(userUpdate), UserController.update)
 
 
-routes.get("/exportcsv", CsvController.csv)
+routes.get("/exportcsv", CsvController.csvAll)
+routes.get("/csvfilter", CsvController.csvFilter)
 
 routes.post('/users/:user_id/accounts', validate(accountCreate), AccountController.create)
 routes.delete('/account/:account_id', AccountController.deleteOne)
