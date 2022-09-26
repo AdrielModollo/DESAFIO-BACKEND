@@ -5,6 +5,7 @@ const { parseISO } = require("date-fns")
 const userCreate = yup.object({
   body: yup.object({
     name: yup.string().required(),
+    password: yup.string().required(),
     email: yup.string().required(),
     birthday: yup.date()
       .max(sub({ years: 18 }, new Date()), "User must be at least 18 years old")
