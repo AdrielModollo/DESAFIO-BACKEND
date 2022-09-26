@@ -16,13 +16,17 @@ module.exports = {
     async csvFilter(req, res) {
         const { createdAt } = req.query
 
+        console.log(createdAt)
+
+        const [ano, mes, dia] = createdAt.split('-');
+
         const users = await User.findAll({
             order: [
                 ['created_at', 'DESC'],
             ],
             where: {
                 created_at: {
-                    [Op.startsWith]: createdAt
+                    [Op.startsWith]: mes + '-' + ano
                 },
             }
         });
