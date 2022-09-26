@@ -30,9 +30,9 @@ module.exports = {
     },
 
     async create(req, res) {
-        const { name, email, birthday, balance } = req.body;
+        const { name, password, email, birthday, balance } = req.body;
 
-        const user = await User.create({ name, email, birthday, balance });
+        const user = await User.create({ name, password, email, birthday, balance });
 
         return res.json(user)
     },
