@@ -37,6 +37,7 @@ yarn seed <- Popular banco de dados
 
 - `POST = localhost:3333/users`
 
+```
 {
     "name": "string",
     "password": "123",
@@ -44,43 +45,53 @@ yarn seed <- Popular banco de dados
     "birthday": "Date",
     "balance": number
 }
+```
 
-Atenção todas a rotas possuí autenticação, por isso é necessário criar uma conta e em seguida entrar pela route de login e recuperar o token, utilize no headers: 
+>Atenção todas a rotas possuí autenticação, por isso é necessário criar uma conta e em seguida entrar pela route de login e recuperar o token, utilize no headers: 
 
-Content-Type \ application/json
+- [x] Content-Type \ application/json
 
-Preencha os dados body:
+>Preencha os dados body:
 
 - `POST = localhost:3333/login`
 
+```
 {
     "email": "string",
     "password": "string"
 }
+```
 
-Adicione em cada rota no headers: 
-Content-Type \ application/json
-x-access-token \ Token gerado através da rota de login
+>Adicione em cada rota no headers: 
+
+- [x] Content-Type \ application/json
+
+- [x] x-access-token \ Token gerado através da rota de login
 
 
 - `GET = localhost:3333/users/`
 - `DELETE = localhost:3333/users/:id`
 - `GET = localhost:3333/users/:id`
+
 - `PATCH localhost:3333/users/:id`
 
+```
 {
     "balance": number
 }
+```
 
 - `GET = localhost:3333/exportcsv`
 
 - `POST = localhost:3333/users/:user_id/accounts`
 
+```
 {
     "debit": number,
     "credit": number,
     "estorn": number
 }
+```
 
 - `DELETE = localhost:3333/account/id`
 - `GET = localhost:3333/csvfilter`
