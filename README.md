@@ -20,18 +20,22 @@
 
 # Instalação
 
-Executar comando: yarn
-(Desta forma será instalada todas depedências já declarada em nosso package.json).
+1. Executar comando: yarn ou npm i
+`Desta forma será instalada todas depedências já declarada em nosso package.json.`
+
+2. Crie uma database com nome 'owinteractive'
+
+3. Crie um arquivo .env conforme exemplo anexado no projeto
 
 # Executar projeto
 
 Comando para iniciar: 
 
-yarn dev  <- Em desenvolvimento
-
 yarn mysql <- Iniciar e banco de dados
 
 yarn seed <- Popular banco de dados
+
+yarn dev  <- Em desenvolvimento
 
 # Como testar?
 
