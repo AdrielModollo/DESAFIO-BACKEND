@@ -47,9 +47,9 @@ yarn seed <- Popular banco de dados
 }
 ```
 
->Atenção todas a rotas possuí autenticação, por isso é necessário criar uma conta e em seguida entrar pela route de login e recuperar o token, utilize no headers: 
+>Atenção todas a rotas possuí autenticação, por isso é necessário criar um usuário e em seguida entrar pela route de login e recuperar o token, utilize no headers: 
 
-- [x] Content-Type \ application/json
+- [x] Content-Type | application/json
 
 >Preencha os dados body:
 
@@ -64,9 +64,9 @@ yarn seed <- Popular banco de dados
 
 >Adicione em cada rota no headers: 
 
-- [x] Content-Type \ application/json
+- [x] Content-Type | application/json
 
-- [x] x-access-token \ Token gerado através da rota de login
+- [x] x-access-token | Token gerado através da rota de login
 
 
 - `GET = localhost:3333/users/`
@@ -94,4 +94,11 @@ yarn seed <- Popular banco de dados
 ```
 
 - `DELETE = localhost:3333/account/id`
+
 - `GET = localhost:3333/csvfilter`
+
+```
+Query Params:
+Key         Value
+createdAt | date
+````
