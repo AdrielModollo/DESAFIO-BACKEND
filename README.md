@@ -47,7 +47,7 @@ yarn seed <- Popular banco de dados
 }
 ```
 
->Atenção todas a rotas possuí autenticação, por isso é necessário criar uma conta e em seguida entrar pela route de login e recuperar o token, utilize no headers: 
+>Atenção todas a rotas possuí autenticação, por isso é necessário criar um usuário e em seguida entrar pela route de login e recuperar o token, utilize no headers: 
 
 - [x] Content-Type | application/json
 
